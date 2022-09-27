@@ -17,6 +17,7 @@
 package com.example.android.architecture.blueprints.todoapp
 
 import android.app.Application
+import android.widget.Toast
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree
@@ -31,5 +32,6 @@ class TodoApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) Timber.plant(DebugTree())
+        Toast.makeText(this, "-------- subclass Size: " + Result::class.sealedSubclasses.size, Toast.LENGTH_LONG).show()
     }
 }
